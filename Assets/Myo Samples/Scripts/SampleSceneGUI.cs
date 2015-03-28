@@ -16,7 +16,11 @@ public class SampleSceneGUI : MonoBehaviour
 
         ThalmicHub hub = ThalmicHub.instance;
 
-        // Access the ThalmicMyo script attached to the Myo object.
+		GUI.Label (new Rect (Screen.width/2, Screen.height/2, Screen.width, Screen.height),
+		           "." 
+		           );
+        
+		// Access the ThalmicMyo script attached to the Myo object.
         ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
 
         if (!hub.hubInitialized) {

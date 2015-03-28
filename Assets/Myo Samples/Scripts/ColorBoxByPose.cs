@@ -91,11 +91,58 @@ public class ColorBoxByPose : MonoBehaviour
 		TransposeOffset=0;
 
 	}
+
+	void FixedUpdate ()
+	{
+
+	}
 	// Update is called once per frame.
 	void Update ()
 	{
 
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width/2, Screen.height/2, 0));
+		//Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow);
 		
+		RaycastHit hit = new RaycastHit ();
+		
+		if (Physics.Raycast (ray, out hit)) { 
+			print (hit.collider.gameObject.name);
+			if(hit.collider.gameObject.name=="Sphere1"){
+				noteselect=0;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere2"){
+				noteselect=1;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere3"){
+				noteselect=2;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere4"){
+				noteselect=3;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere5"){
+				noteselect=4;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere6"){
+				noteselect=5;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere7"){
+				noteselect=6;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+			if(hit.collider.gameObject.name=="Sphere8"){
+				noteselect=7;
+				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+			}
+				
+				
+			}
+
 		// Access the ThalmicMyo component attached to the Myo game object.
 		ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
 		
@@ -160,13 +207,13 @@ public class ColorBoxByPose : MonoBehaviour
 				GetComponent<Renderer>().material = waveInMaterial;
 				
 				
-				
-				
-				noteselect--;
-				
-				if(noteselect<=-1){
-					noteselect=7;
-				}
+//				
+//				
+//				noteselect--;
+//				
+//				if(noteselect<=-1){
+//					noteselect=7;
+//				}
 				
 				
 				
@@ -178,11 +225,11 @@ public class ColorBoxByPose : MonoBehaviour
 			} else if (thalmicMyo.pose == Pose.WaveOut) {
 				GetComponent<Renderer>().material = waveOutMaterial;
 				
-				noteselect++;
+				//noteselect++;
 				
-				if(noteselect>=8){
-					noteselect=0;
-				}
+				//if(noteselect>=8){
+				//	noteselect=0;
+				//}
 				
 				ExtendUnlockAndNotifyUserAction (thalmicMyo);
 			} else if (thalmicMyo.pose == Pose.DoubleTap) {
