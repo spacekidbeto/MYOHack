@@ -1,12 +1,6 @@
 Base path: /Applications/Unity/Unity.app/Contents
-Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-1947001600
+Pipe name: \\.\pipe\UnityShaderCompiler-64bit-1-1971462912
 Cmd: getPlatforms
-Cmd: preprocess
-  insize=2379 outsize=1092 ok=1
-Cmd: preprocess
-  insize=2237 outsize=975 ok=1
-Cmd: preprocess
-  insize=2274 outsize=1036 ok=1
 Cmd: preprocess
   insize=8333 outsize=2044 ok=1
 Cmd: compileSnippet
@@ -190,15 +184,15 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=1 insize=1113 outsize=6 kw= ok=1
 Cmd: preprocess
-  insize=1044 outsize=1035 ok=1
+  insize=1044 outsize=1034 ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=6189 outsize=2230 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
+  api=0 type=0 insize=6925 outsize=2230 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
 Cmd: compileSnippet
-  api=0 type=1 insize=6189 outsize=6 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
+  api=0 type=1 insize=6925 outsize=6 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=3911 outsize=1800 kw=POINT ok=1
+  api=0 type=0 insize=3896 outsize=1800 kw=POINT ok=1
 Cmd: compileSnippet
-  api=0 type=1 insize=3911 outsize=6 kw=POINT ok=1
+  api=0 type=1 insize=3896 outsize=6 kw=POINT ok=1
 Cmd: compileSnippet
   api=0 type=0 insize=3314 outsize=2261 kw= ok=1
 Cmd: compileSnippet
@@ -245,6 +239,12 @@ Cmd: compileSnippet
   api=0 type=0 insize=1238 outsize=1092 kw= ok=1
 Cmd: compileSnippet
   api=0 type=1 insize=1238 outsize=6 kw= ok=1
+Cmd: preprocess
+  insize=2379 outsize=1092 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1589 outsize=528 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1589 outsize=6 kw=SOFTPARTICLES_OFF ok=1
 Cmd: preprocess
   insize=1344 outsize=330 ok=1
 Cmd: compileSnippet
@@ -301,6 +301,12 @@ Cmd: compileSnippet
   api=0 type=0 insize=5416 outsize=1559 kw= ok=1
 Cmd: compileSnippet
   api=0 type=1 insize=5416 outsize=6 kw= ok=1
+Cmd: preprocess
+  insize=2237 outsize=975 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1561 outsize=602 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1561 outsize=6 kw=SOFTPARTICLES_OFF ok=1
 Cmd: preprocess
   insize=32573 outsize=255 ok=1
 Cmd: compileSnippet
@@ -778,6 +784,12 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=1 insize=3758 outsize=6 kw= ok=1
 Cmd: preprocess
+  insize=2274 outsize=1036 ok=1
+Cmd: compileSnippet
+  api=0 type=0 insize=1537 outsize=528 kw=SOFTPARTICLES_OFF ok=1
+Cmd: compileSnippet
+  api=0 type=1 insize=1537 outsize=6 kw=SOFTPARTICLES_OFF ok=1
+Cmd: preprocess
   insize=6737 outsize=236 ok=1
 Cmd: compileSnippet
   api=0 type=0 insize=6803 outsize=3187 kw= ok=1
@@ -924,18 +936,6 @@ Cmd: compileSnippet
 Cmd: compileSnippet
   api=0 type=1 insize=4400 outsize=6 kw= ok=1
 Cmd: compileSnippet
-  api=0 type=0 insize=7355 outsize=4240 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
+  api=0 type=0 insize=1482 outsize=496 kw=SOFTPARTICLES_OFF ok=1
 Cmd: compileSnippet
-  api=0 type=1 insize=7355 outsize=6 kw=DIRECTIONAL SHADOWS_OFF LIGHTMAP_OFF DIRLIGHTMAP_OFF DYNAMICLIGHTMAP_OFF ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=4592 outsize=3145 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=4592 outsize=6 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=966 outsize=587 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=966 outsize=6 kw= ok=1
-Cmd: compileSnippet
-  api=0 type=0 insize=3911 outsize=1462 kw=DIRECTIONAL ok=1
-Cmd: compileSnippet
-  api=0 type=1 insize=3911 outsize=6 kw=DIRECTIONAL ok=1
+  api=0 type=1 insize=1482 outsize=6 kw=SOFTPARTICLES_OFF ok=1
