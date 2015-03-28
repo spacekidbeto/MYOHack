@@ -33,13 +33,15 @@ public class SampleSceneGUI : MonoBehaviour
                 "Perform the Sync Gesture."
             );
         } else {
+
+
+				
+			
             GUI.Label (new Rect (12, 8, Screen.width, Screen.height),
-                "Fist: Vibrate Myo armband\n" +
-                "Wave in: Set box material to blue\n" +
-                "Wave out: Set box material to green\n" +
-                "Double tap: Reset box material\n" +
-                "Fingers spread: Set forward direction"
+				           ColorBoxByPose.noteselect.ToString()  
             );
+
+
         }
     }
 

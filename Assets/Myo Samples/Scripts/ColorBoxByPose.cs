@@ -49,8 +49,9 @@ public class ColorBoxByPose : MonoBehaviour
 	GameObject[] Sounds2 = new GameObject[8];
 	int[] note = new int[8];
 	bool[] playedSound = new bool[8];
+
 	//int[] pitches1 = new int[] { 0,2, 3,5, 7,8,10 ,12,14 ,15,17,19 ,20,22 ,24,26,27 ,29,31 ,32,34,36,38,39,41,43,44,46,48,50,51,53,55,56,58,60,62,63,-23, -20, -18, -15, -13, -11, -8, -6, -3, -1, 1, 4, 6,9,11,13,16 ,18,21,23 ,25,28 ,30,33,35 ,37,40 ,42,45,47,49,52,54,57,59,61,64};
-	int noteselect = 1;
+	public static int noteselect = 0;
 	
 	void Start () {
 		
@@ -65,34 +66,35 @@ public class ColorBoxByPose : MonoBehaviour
 			//Sounds2 [i].GetComponent<AudioSource> ().clip = Instrument1;
 			
 			playedSound [i] = false;
-			note [i] = 1;
+			note [i] = 0;
 			//int[] pitches1 = new int[] { -24, -22, -21, -19, -17, -16, -14, -12, -10, -9, -7, -5, -4, -2,0,2, 3,5, 7,8,10 ,12,14 ,15,17,19 ,20,22 ,24,26,27 ,29,31 ,32,34,36,38,39,41,43,44,46,48,50,51,53,55,56,58,60,62,63,-23, -20, -18, -15, -13, -11, -8, -6, -3, -1, 1, 4, 6,9,11,13,16 ,18,21,23 ,25,28 ,30,33,35 ,37,40 ,42,45,47,49,52,54,57,59,61,64} ;
 			
 		}
-		Sounds1 [1].GetComponent<AudioSource> ().clip = Instrument1;
-		Sounds1 [2].GetComponent<AudioSource> ().clip = Instrument2;
-		Sounds1 [3].GetComponent<AudioSource> ().clip = Instrument3;
-		Sounds1 [4].GetComponent<AudioSource> ().clip = Instrument4;
-		Sounds1 [5].GetComponent<AudioSource> ().clip = Instrument5;
-		Sounds1 [6].GetComponent<AudioSource> ().clip = Instrument6;
-		Sounds1 [7].GetComponent<AudioSource> ().clip = Instrument7;
-		Sounds1 [8].GetComponent<AudioSource> ().clip = Instrument8;
-		Sounds2 [1].GetComponent<AudioSource> ().clip = Instrument1b;
-		Sounds2 [2].GetComponent<AudioSource> ().clip = Instrument2b;
-		Sounds2 [3].GetComponent<AudioSource> ().clip = Instrument3b;
-		Sounds2 [4].GetComponent<AudioSource> ().clip = Instrument4b;
-		Sounds2 [5].GetComponent<AudioSource> ().clip = Instrument5b;
-		Sounds2 [6].GetComponent<AudioSource> ().clip = Instrument6b;
-		Sounds2 [7].GetComponent<AudioSource> ().clip = Instrument7b;
-		Sounds2 [8].GetComponent<AudioSource> ().clip = Instrument8b;
+		Sounds1 [0].GetComponent<AudioSource> ().clip = Instrument1;
+		Sounds1 [1].GetComponent<AudioSource> ().clip = Instrument2;
+		Sounds1 [2].GetComponent<AudioSource> ().clip = Instrument3;
+		Sounds1 [3].GetComponent<AudioSource> ().clip = Instrument4;
+		Sounds1 [4].GetComponent<AudioSource> ().clip = Instrument5;
+		Sounds1 [5].GetComponent<AudioSource> ().clip = Instrument6;
+		Sounds1 [6].GetComponent<AudioSource> ().clip = Instrument7;
+		Sounds1 [7].GetComponent<AudioSource> ().clip = Instrument8;
+		Sounds2 [0].GetComponent<AudioSource> ().clip = Instrument1b;
+		Sounds2 [1].GetComponent<AudioSource> ().clip = Instrument2b;
+		Sounds2 [2].GetComponent<AudioSource> ().clip = Instrument3b;
+		Sounds2 [3].GetComponent<AudioSource> ().clip = Instrument4b;
+		Sounds2 [4].GetComponent<AudioSource> ().clip = Instrument5b;
+		Sounds2 [5].GetComponent<AudioSource> ().clip = Instrument6b;
+		Sounds2 [6].GetComponent<AudioSource> ().clip = Instrument7b;
+		Sounds2 [7].GetComponent<AudioSource> ().clip = Instrument8b;
 		
 		OctaveOffset=0;
 		TransposeOffset=0;
+
 	}
 	// Update is called once per frame.
 	void Update ()
 	{
-		
+
 		
 		// Access the ThalmicMyo component attached to the Myo game object.
 		ThalmicMyo thalmicMyo = myo.GetComponent<ThalmicMyo> ();
@@ -163,7 +165,7 @@ public class ColorBoxByPose : MonoBehaviour
 				noteselect--;
 				
 				if(noteselect<=-1){
-					noteselect=9;
+					noteselect=7;
 				}
 				
 				
@@ -178,7 +180,7 @@ public class ColorBoxByPose : MonoBehaviour
 				
 				noteselect++;
 				
-				if(noteselect==8){
+				if(noteselect>=8){
 					noteselect=0;
 				}
 				
