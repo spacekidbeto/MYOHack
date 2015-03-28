@@ -26,14 +26,16 @@ public class SoundInstantiationScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (started && InstantiatedSoundSource.isPlaying && isDying) {
+		if (started && InstantiatedSoundSource.isPlaying) {
 			CountdownTime -= Time.deltaTime;
 			if (CountdownTime < 0f) {
 				CountdownTime = 0f;
 			}
+			//Debug.Log("Decaying");
 			InstantiatedSoundSource.volume = CountdownTime / StartingCountdownTime;
 		}
-		else if (started && !InstantiatedSoundSource.isPlaying && isDying) {
+		else if (started && !InstantiatedSoundSource.isPlaying) {
+			//Debug.Log("DEAD");
 			DestroyObject(this.gameObject);
 		}
 	}

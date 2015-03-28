@@ -49,7 +49,7 @@ public class ColorBoxByPose : MonoBehaviour
 	public GameObject[] Spheres = new GameObject[8];
 	GameObject[] Sounds2 = new GameObject[8];
 	int[] note = new int[8];
-	bool[] playedSound = new bool[8];
+	volatile bool[] playedSound = new bool[8];
 	bool[] highlightedState = new bool[8];
 	public Transform SoundParent;
 
@@ -140,26 +140,29 @@ public class ColorBoxByPose : MonoBehaviour
 						////Sounds1[noteselect].GetComponent<AudioSource>().Play();
 						/// 
 
-						if (!playedSound[noteselect]) {
-							SoundInstantiationScript[] children =	SoundParent.GetComponentsInChildren<SoundInstantiationScript>();
-							for(int i = children.Length - 1; i >= 0; i--) {
-							children[i].StartDestroy();
-							}
+						if (!playedSound[t]) {
+							//Debug.Log("KILL");
+						//Debug.Log(noteselect);
+							//SoundInstantiationScript[] children =	SoundParent.GetComponentsInChildren<SoundInstantiationScript>();
+							//for(int i = children.Length - 1; i >= 0; i--) {
+							//children[i].StartDestroy();
+							//}
 
 							SoundInstantiationScript newSound = (SoundInstantiationScript)Instantiate(InstiatableSound);
 							newSound.InstantiatedSoundSource = Sounds1[t].GetComponent<AudioSource>();
 							newSound.StartSound(Mathf.Pow (2f,(OctaveOffset+TransposeOffset)/12f));
 							newSound.transform.parent = SoundParent.transform;
 						}
+						playedSound[t] = true;
 
 						
-						playedSound[noteselect] = true;
 						
 						noteselect=t;
 						highlightedState[t]=true;
 						hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
 					////}
 				}else if(highlightedState[t]==true){
+					//Debug.Log("HIGHLIGHT");
 					highlightedState[t]=false;
 					playedSound[t] = false;
 					Spheres[t].gameObject.GetComponent<Renderer>().material = doubleTapMaterial;
