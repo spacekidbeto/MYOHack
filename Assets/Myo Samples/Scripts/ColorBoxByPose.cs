@@ -46,9 +46,11 @@ public class ColorBoxByPose : MonoBehaviour
 	public AudioClip Instrument7b;
 	public AudioClip Instrument8b;
 	GameObject[] Sounds1 = new GameObject[8];
+	public GameObject[] Spheres = new GameObject[8];
 	GameObject[] Sounds2 = new GameObject[8];
 	int[] note = new int[8];
 	bool[] playedSound = new bool[8];
+	bool[] highlightedState = new bool[8];
 
 	//int[] pitches1 = new int[] { 0,2, 3,5, 7,8,10 ,12,14 ,15,17,19 ,20,22 ,24,26,27 ,29,31 ,32,34,36,38,39,41,43,44,46,48,50,51,53,55,56,58,60,62,63,-23, -20, -18, -15, -13, -11, -8, -6, -3, -1, 1, 4, 6,9,11,13,16 ,18,21,23 ,25,28 ,30,33,35 ,37,40 ,42,45,47,49,52,54,57,59,61,64};
 	public static int noteselect = 0;
@@ -107,37 +109,18 @@ public class ColorBoxByPose : MonoBehaviour
 		
 		if (Physics.Raycast (ray, out hit)) { 
 			print (hit.collider.gameObject.name);
-			if(hit.collider.gameObject.name=="Sphere1"){
-				noteselect=0;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere2"){
-				noteselect=1;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere3"){
-				noteselect=2;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere4"){
-				noteselect=3;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere5"){
-				noteselect=4;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere6"){
-				noteselect=5;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere7"){
-				noteselect=6;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-			}
-			if(hit.collider.gameObject.name=="Sphere8"){
-				noteselect=7;
-				hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+
+			for (int t = 0; t < 8; t++){
+
+				if(hit.collider.gameObject==Spheres[t]){
+					noteselect=t;
+					highlightedState[t]=true;
+					hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
+				}else if(highlightedState[t]==true){
+					highlightedState[t]=false;
+					Spheres[t].gameObject.GetComponent<Renderer>().material = doubleTapMaterial;
+				}
+
 			}
 				
 				
