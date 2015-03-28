@@ -9,7 +9,6 @@
 -define:UNITY_5_0_0
 -define:UNITY_5_0
 -define:UNITY_5
--define:ENABLE_LICENSE_RENAME
 -define:ENABLE_NEW_BUGREPORTER
 -define:ENABLE_2D_PHYSICS
 -define:ENABLE_4_6_FEATURES
@@ -36,7 +35,6 @@
 -define:ENABLE_WEBCAM
 -define:ENABLE_WWW
 -define:ENABLE_AUDIOMIXER_SUSPEND
--define:ENABLE_NONPRO
 -define:INCLUDE_DYNAMIC_GI
 -define:INCLUDE_GI
 -define:INCLUDE_IL2CPP
@@ -55,6 +53,8 @@
 -define:UNITY_EDITOR
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
+-define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:CROSS_PLATFORM_INPUT
 'Assets/Standard Assets/CrossPlatformInput/Scripts/AxisTouchButton.cs'
 'Assets/Standard Assets/CrossPlatformInput/Scripts/ButtonHandler.cs'
