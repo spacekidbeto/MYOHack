@@ -51,9 +51,13 @@ public class ColorBoxByPose : MonoBehaviour
 	int[] note = new int[8];
 	bool[] playedSound = new bool[8];
 	bool[] highlightedState = new bool[8];
+	public Transform SoundParent;
+
 	
 	//int[] pitches1 = new int[] { 0,2, 3,5, 7,8,10 ,12,14 ,15,17,19 ,20,22 ,24,26,27 ,29,31 ,32,34,36,38,39,41,43,44,46,48,50,51,53,55,56,58,60,62,63,-23, -20, -18, -15, -13, -11, -8, -6, -3, -1, 1, 4, 6,9,11,13,16 ,18,21,23 ,25,28 ,30,33,35 ,37,40 ,42,45,47,49,52,54,57,59,61,64};
 	public static int noteselect = 0;
+
+	public SoundInstantiationScript InstiatableSound;
 	
 	void Start () {
 		
@@ -113,35 +117,51 @@ public class ColorBoxByPose : MonoBehaviour
 			for (int t = 0; t < 8; t++){
 				
 				if(hit.collider.gameObject==Spheres[t]){
-					if(Sounds1[t].GetComponent<AudioSource>().isPlaying){
+					////if(Sounds1[t].GetComponent<AudioSource>().isPlaying){
 						
-					}else{
+					////}else{
 						
-						for (int v = 0; v < 8; v++){
-							Sounds1[v].GetComponent<AudioSource>().Stop();
-						}
+						////for (int v = 0; v < 8; v++){
+						////	Sounds1[v].GetComponent<AudioSource>().Stop();
+						////}
+
 						//							if(Sounds1[t].GetComponent<AudioSource>().isPlaying){
 						//								Sounds1[t].GetComponent<AudioSource>().Stop();
 						//							}
 						
 						
-						Sounds1[noteselect].GetComponent<AudioSource>().pitch=Mathf.Pow (2f,(OctaveOffset+TransposeOffset)/12f);
-						Sounds1[noteselect].GetComponent<AudioSource>().volume=CurrentVol;
-						Sounds2[noteselect].GetComponent<AudioSource>().volume=NoteOffVol;
+						////Sounds1[noteselect].GetComponent<AudioSource>().pitch=Mathf.Pow (2f,(OctaveOffset+TransposeOffset)/12f);
+						// Sounds1[noteselect].GetComponent<AudioSource>().volume=CurrentVol;
+						// Sounds2[noteselect].GetComponent<AudioSource>().volume=NoteOffVol;
 						//                                if(autoloop){
 						//                                    Sounds1[y].GetComponent<AudioSource>().loop=true;
 						//                                    Sounds2[y].GetComponent<AudioSource>().loop=false;
 						//                                }
-						Sounds1[noteselect].GetComponent<AudioSource>().Play();
+						////Sounds1[noteselect].GetComponent<AudioSource>().Play();
+						/// 
+
+						if (!playedSound[noteselect]) {
+							SoundInstantiationScript[] children =	SoundParent.GetComponentsInChildren<SoundInstantiationScript>();
+							for(int i = children.Length - 1; i >= 0; i--) {
+							children[i].StartDestroy();
+							}
+
+							SoundInstantiationScript newSound = (SoundInstantiationScript)Instantiate(InstiatableSound);
+							newSound.InstantiatedSoundSource = Sounds1[t].GetComponent<AudioSource>();
+							newSound.StartSound(Mathf.Pow (2f,(OctaveOffset+TransposeOffset)/12f));
+							newSound.transform.parent = SoundParent.transform;
+						}
+
 						
 						playedSound[noteselect] = true;
 						
 						noteselect=t;
 						highlightedState[t]=true;
 						hit.collider.gameObject.GetComponent<Renderer>().material = waveInMaterial;
-					}
+					////}
 				}else if(highlightedState[t]==true){
 					highlightedState[t]=false;
+					playedSound[t] = false;
 					Spheres[t].gameObject.GetComponent<Renderer>().material = doubleTapMaterial;
 				}
 				
