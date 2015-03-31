@@ -54,7 +54,7 @@ public class SampleSceneGUI : MonoBehaviour
         ThalmicHub hub = ThalmicHub.instance;
 
         if (Input.GetKeyDown ("q")) {
-            hub.ResetHub();
+            //hub.ResetHub();
         }
     }
 }
