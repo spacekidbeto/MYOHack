@@ -1,12 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\OscillateEmissions.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Myosonus/Scripts/View/ControlScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\View\ControlScript.cs" Line="45" Column="23" />
-      <File FileName="Assets\Scripts\View\MainControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Myo Samples\Scripts\ColorBoxByPose.cs" Line="1" Column="1" />
-      <File FileName="Assets\Myo Samples\Scripts\SampleSceneGUI.cs" Line="57" Column="15" />
-      <File FileName="Assets\Scripts\OscillateEmissions.cs" Line="21" Column="5" />
+      <File FileName="Assets/Myosonus/Scripts/MyosonusSampleSceneGUI.cs" Line="34" Column="15" />
+      <File FileName="Assets/Myosonus/Scripts/MyosonusColorBoxByPose.cs" Line="11" Column="22" />
+      <File FileName="Assets/Myosonus/Scripts/MyosonusJointOrientation.cs" Line="13" Column="22" />
+      <File FileName="Assets/Myosonus/Scripts/View/ControlScript.cs" Line="90" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
