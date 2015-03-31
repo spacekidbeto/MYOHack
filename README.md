@@ -1,5 +1,4 @@
-# MYOHack
-MYOSONUS
+# MYOSONUS
 
 Myosonus was created during the 2015 AT&T Dallas Hackathon and is made available to you open source under the MIT License. This Unity3D project is a great starter-kit for making an app to composing music in 3D space using the Thalmic Myo. Use it, share it, and if you feel like it, give credits to the creators. Enjoy!
 
